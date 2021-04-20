@@ -48,24 +48,21 @@ const marketSchedule = [
 //     filteredSchedule = [...marketSchedule];
 //   }
 // })
-let state = "";
-// let filteredSchedule = state ? marketSchedule.filter((event) => event.day === state) : [...marketSchedule];
+// let state = "";
 
-function filterSchedule() {
-  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-  let counter = 6;
-  return function(state) {
-    counter++;
-    if (counter > 6) {
-      counter = 0;
-    }
-    return state ? marketSchedule.filter((event) => event.day === days[counter]) : [...marketSchedule];
+
+
+
+let counter = 6;
+function count() {
+  counter++;
+  if (counter > 6) {
+    counter = 0;
   }
 }
 
-let filter = filterSchedule();
-
-
+let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+let filteredSchedule = true ? marketSchedule.filter((event) => event.day === days[counter]) : [...marketSchedule];
 // -------
 
 // $("#cyclePlayer").click(function () {
@@ -80,7 +77,7 @@ let filter = filterSchedule();
 function MarketScheduleDetails() {
   return (
     <>
-      <button onClick {}>Next ></button>
+      <button onClick={count()}>Next > {counter}</button>
       {filteredSchedule.map((event, index) =>
         <MarketScheduleDay
           day={event.day}
