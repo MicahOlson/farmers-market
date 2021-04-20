@@ -40,12 +40,16 @@ const marketSchedule = [
   }
 ];
 
-let filteredSchedule = [];
-marketSchedule.forEach(function(event) {
-  if (event.day === "Thursday") {
-    filteredSchedule.push(event);
-  }
-})
+// let filteredSchedule = [];
+// marketSchedule.forEach(function(event) {
+//   if (event.day === "Thursday") {
+//     filteredSchedule.push(event);
+//   } else if (event.day === "All") {
+//     filteredSchedule = [...marketSchedule];
+//   }
+// })
+let state = "";
+let filteredSchedule = state ? marketSchedule.filter((event) => event.day === state) : [...marketSchedule];
 
 function MarketScheduleDetails() {
   return (
