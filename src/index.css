@@ -31,6 +31,10 @@ p {
   margin-right: 20px;
 }
 
+button {
+  max-width: 60px;
+}
+
 .row {
   display: flex;
   flex-direction: row;

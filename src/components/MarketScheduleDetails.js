@@ -49,11 +49,38 @@ const marketSchedule = [
 //   }
 // })
 let state = "";
-let filteredSchedule = state ? marketSchedule.filter((event) => event.day === state) : [...marketSchedule];
+// let filteredSchedule = state ? marketSchedule.filter((event) => event.day === state) : [...marketSchedule];
+
+function filterSchedule() {
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+  let counter = 6;
+  return function(state) {
+    counter++;
+    if (counter > 6) {
+      counter = 0;
+    }
+    return state ? marketSchedule.filter((event) => event.day === days[counter]) : [...marketSchedule];
+  }
+}
+
+let filter = filterSchedule();
+
+
+// -------
+
+// $("#cyclePlayer").click(function () {
+//   if (playerNum > 4) {
+//     playerNum = 1;
+//   }
+//   $("#playerId").text(playerNum++);
+// });
+
+// -------
 
 function MarketScheduleDetails() {
   return (
     <>
+      <button onClick {}>Next ></button>
       {filteredSchedule.map((event, index) =>
         <MarketScheduleDay
           day={event.day}
