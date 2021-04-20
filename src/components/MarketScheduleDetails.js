@@ -40,10 +40,17 @@ const marketSchedule = [
   }
 ];
 
+let filteredSchedule = [];
+marketSchedule.forEach(function(event) {
+  if (event.day === "Thursday") {
+    filteredSchedule.push(event);
+  }
+})
+
 function MarketScheduleDetails() {
   return (
     <>
-      {marketSchedule.map((event, index) =>
+      {filteredSchedule.map((event, index) =>
         <MarketScheduleDay
           day={event.day}
           location={event.location}

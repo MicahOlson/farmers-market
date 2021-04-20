@@ -4,11 +4,11 @@ import PropTypes from 'prop-types'
 function MarketScheduleDay(props) {
   return (
     <>
+      <hr/>
       <p>Day: {props.day}</p>
       <p>Location: {props.location}</p>
       <p>Hours: {props.hours}</p>
       <p>Booth: {props.booth}</p>
-      <hr/>
     </>
   );
 }

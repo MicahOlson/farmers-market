@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 function SeasonalProduceMonth(props) {
   return (
     <>
+      <hr/>
       <p>Month: {props.month}</p>
       <p>Selection: {props.selection.join(", ")}</p>
-      <hr/>
     </>
   );
 }

@@ -7,11 +7,11 @@ function App() {
   return (
     <React.Fragment>
       <AppHeader />
-      <div className="styleRow">
-        <div>
+      <div className="row">
+        <div className="column">
           <MarketSchedule />
         </div>
-        <div>
+        <div className="column">
           <SeasonalProduce />
         </div>
       </div>
